@@ -1,4 +1,4 @@
-from Backend.models import llm_cohere,llm_google,llm_groq
+from Backend.models import llm_cohere,llm_google,llm_groq, LLM_POOL, invoke_with_fallback
 
 from Backend.state import SummaryState
 from Backend.tools_functions import data_overview,data_quality,data_statistics,get_important_numerical_columns, data_categorical, analyze_categorical_columns, data_outlier, data_correlation, data_target_analysis
@@ -172,7 +172,10 @@ def target_analysis(state: SummaryState) -> dict:
         column_metadata=column_metadata
     )
 
-    raw = llm_google.invoke(prompt_text)
+    raw = invoke_with_fallback(
+        llms=LLM_POOL,
+        messages=prompt_text
+    )
     clean_text = re.sub(r"```json|```", "", raw.content).strip()
     response = json.loads(clean_text)
 
@@ -212,7 +215,10 @@ def eda_insight_summary(state: SummaryState) -> dict:
         visual_outputs = state["graph_file_path"],
     )
 
-    response = llm_google.invoke(prompt)
+    response = invoke_with_fallback(
+        llms=LLM_POOL,
+        messages=prompt
+    )
 
     return {
         "eda_insight_summary": response.content
