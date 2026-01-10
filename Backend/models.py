@@ -45,14 +45,27 @@ LLM_POOL = [llm_google_1, llm_google_2, llm_google_3, llm_cohere, llm_groq_1, ll
 
 def invoke_with_fallback(llms, messages):
     last_error = None
+    now = time.time()
 
     for llm in llms:
+        llm_name = llm.model if hasattr(llm, "model") else str(llm)
+
+        # Skip LLM if in cooldown
+        if llm_name in LLM_COOLDOWN:
+            if now < LLM_COOLDOWN[llm_name]:
+                continue
+            else:
+                del LLM_COOLDOWN[llm_name]
+
         try:
-            response = llm.invoke(messages)
-            return response.content
+            return llm.invoke(messages)
 
         except Exception as e:
             last_error = e
-            logging.warning(f"LLM failed: {llm} → {e}")
+            print(f"[WARN] {llm_name} failed → {e}")
+
+            # Put LLM in cooldown
+            if "RESOURCE_EXHAUSTED" in str(e) or "429" in str(e):
+                LLM_COOLDOWN[llm_name] = now + COOLDOWN_SECONDS
 
     raise RuntimeError("All LLMs failed") from last_error
