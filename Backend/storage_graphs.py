@@ -8,8 +8,9 @@ import tempfile
 import plotly.io as pio
 from datetime import datetime
 
-from dotenv import load_dotenv
-load_dotenv()
+if os.getenv("RAILWAY_ENVIRONMENT") is None:
+    from dotenv import load_dotenv
+    load_dotenv()
 
 client = MongoClient(os.environ["MONGO_URI"])
 collection = client[os.environ["DB_NAME"]][os.environ["COLLECTION_NAME"]]
