@@ -4,6 +4,10 @@ from langchain_groq import ChatGroq
 from dotenv import load_dotenv
 import os
 import logging
+import time
+
+LLM_COOLDOWN = {}
+COOLDOWN_SECONDS = 120  # 2 minutes
 
 load_dotenv()
 
