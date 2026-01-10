@@ -70,7 +70,7 @@ CHAT_STORE = {}
 def chat_with_data(run_id: str, user_query: str) -> str:
     # 1️⃣ Create or fetch history
     if run_id not in CHAT_STORE:
-        print(run_id)
+        # print(run_id)
         CHAT_STORE[run_id] = InMemoryChatMessageHistory()
 
         # Load EDA once
@@ -122,5 +122,5 @@ def chat_with_data(run_id: str, user_query: str) -> str:
         },
         config={"configurable": {"session_id": run_id}}
     )
-    print(CHAT_STORE[run_id])
+    # print(CHAT_STORE[run_id])
     return response.content
