@@ -1,6 +1,7 @@
 from fastapi import FastAPI, UploadFile, File, HTTPException
 from fastapi import Body,Response, Cookie
 from fastapi.responses import JSONResponse
+from fastapi.middleware.cors import CORSMiddleware
 import os, shutil, uuid, time
 import pandas as pd
 import io
@@ -15,6 +16,13 @@ from Backend.chat_nodes import chat_with_data
 # from Backend.session_store import set_session
 
 app = FastAPI(title="DataMind EDA API", version="2.0")
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:5173/","http://localhost:5174/"], # Or your specific frontend URL
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.post("/run-eda")
 async def run_eda(file: UploadFile = File(...),response: Response = None):
