@@ -11,7 +11,7 @@ from Backend.graph import eda_workflow
 from Backend.mongo import store_eda_data, delete_all_data
 from Backend.storage_graphs import delete_all_visual_outputs
 from Backend.prompt import mongo_prompt
-from Backend.models import llm_groq
+from Backend.models import llm_groq_1
 from Backend.chat_nodes import chat_with_data
 # from Backend.session_store import set_session
 
@@ -67,7 +67,7 @@ async def run_eda(file: UploadFile = File(...),response: Response = None):
         }
 
         prompt = mongo_prompt.format_prompt(mongo_doc=mongo_doc)
-        llm_response = llm_groq.invoke(prompt)
+        llm_response = llm_groq_1.invoke(prompt)
 
         document = {
             "run_id": run_id,
