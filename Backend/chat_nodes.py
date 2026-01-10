@@ -61,7 +61,7 @@ from langchain_core.chat_history import InMemoryChatMessageHistory
 from langchain_core.runnables.history import RunnableWithMessageHistory
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.messages import SystemMessage
-from Backend.models import llm_groq
+from Backend.models import llm_groq_1
 from Backend.mongo import fetch_eda_data
 
 # Global in-memory store
@@ -105,7 +105,7 @@ def chat_with_data(run_id: str, user_query: str) -> str:
         ("human", "{input}")
     ])
 
-    chain = prompt | llm_groq
+    chain = prompt | llm_groq_1
 
     # 3️⃣ Runnable with history
     runnable = RunnableWithMessageHistory(

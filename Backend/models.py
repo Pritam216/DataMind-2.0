@@ -7,12 +7,6 @@ import logging
 
 load_dotenv()
 
-# llm_google = ChatGoogleGenerativeAI(
-#     model = "gemini-2.5-flash",
-#     temperature = 0.3,
-#     api_key = os.environ["GEMINI_API_KEY"],
-# )
-
 llm_google_1 = ChatGoogleGenerativeAI(
     model = "gemini-2.5-pro",
     temperature = 0.3,
@@ -48,12 +42,6 @@ llm_groq_2 = ChatGroq(
     api_key=os.environ["GROQ_API_KEY"],
 )
 LLM_POOL = [llm_google_1, llm_google_2, llm_google_3, llm_cohere, llm_groq_1, llm_groq_2]
-# response1=llm_google.invoke("Write about LLM in short")
-# response2=llm_cohere.invoke("Write about LLM in short")
-# response3=llm_groq.invoke("write about LLM in short")
-
-# print(response1.content,"\n\n",response2.content,'\n\n',response3.content)
-# print(response3.content)
 
 def invoke_with_fallback(llms, messages):
     last_error = None
