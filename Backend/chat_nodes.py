@@ -61,8 +61,8 @@ from langchain_core.chat_history import InMemoryChatMessageHistory
 from langchain_core.runnables.history import RunnableWithMessageHistory
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.messages import SystemMessage
-from models import llm_groq
-from mongo import fetch_eda_data
+from Backend.models import llm_groq
+from Backend.mongo import fetch_eda_data
 
 # Global in-memory store
 CHAT_STORE = {}

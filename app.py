@@ -5,18 +5,18 @@ import os, shutil, uuid, time
 import pandas as pd
 import io
 
-from state import ChatRequest
-from graph import eda_workflow
-from mongo import store_eda_data, delete_all_data
-from storage_graphs import delete_all_visual_outputs
-from prompt import mongo_prompt
-from models import llm_groq
-from chat_nodes import chat_with_data
-from session_store import set_session
+from Backend.state import ChatRequest
+from Backend.graph import eda_workflow
+from Backend.mongo import store_eda_data, delete_all_data
+from Backend.storage_graphs import delete_all_visual_outputs
+from Backend.prompt import mongo_prompt
+from Backend.models import llm_groq
+from Backend.chat_nodes import chat_with_data
+# from Backend.session_store import set_session
 
-api = FastAPI(title="DataMind EDA API", version="2.0")
+app = FastAPI(title="DataMind EDA API", version="2.0")
 
-@api.post("/run-eda")
+@app.post("/run-eda")
 async def run_eda(file: UploadFile = File(...),response: Response = None):
 
     try:
@@ -85,7 +85,7 @@ async def run_eda(file: UploadFile = File(...),response: Response = None):
         raise HTTPException(status_code=500, detail=str(e))
 
 
-@api.post("/chat")
+@app.post("/chat")
 def chat_endpoint(payload: ChatRequest):
     try:
         response = chat_with_data(
@@ -101,7 +101,7 @@ def chat_endpoint(payload: ChatRequest):
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
-@api.delete("/cleanup-images/{run_id}")
+@app.delete("/cleanup-images/{run_id}")
 def cleanup_images(run_id: str):
     try:
         delete_result = delete_all_visual_outputs(run_id=run_id)
@@ -115,7 +115,7 @@ def cleanup_images(run_id: str):
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
-@api.delete("/cleanup-data/{run_id}")
+@app.delete("/cleanup-data/{run_id}")
 def cleanup_data(run_id : str):
     try:
         delete_data = delete_all_data(run_id=run_id)
@@ -129,10 +129,10 @@ def cleanup_data(run_id : str):
         raise HTTPException(status_code=500, detail=str(e))
 
 
-@api.get("/health")
+@app.get("/health")
 def health():
     return {"status": "ok"}
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(api, host="0.0.0.0", port=8000)
+    uvicorn.run(app, host="0.0.0.0", port=8000)

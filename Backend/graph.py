@@ -1,6 +1,6 @@
 from langgraph.graph import StateGraph,START,END
-from state import SummaryState
-from main_nodes import Overview, quality, statistics, categorical_analysis, outlier, correlation, target_analysis, eda_insight_summary
+from Backend.state import SummaryState
+from Backend.main_nodes import Overview, quality, statistics, categorical_analysis, outlier, correlation, target_analysis, eda_insight_summary
 
 graph = StateGraph(SummaryState)
 

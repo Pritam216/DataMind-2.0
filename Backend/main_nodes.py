@@ -1,9 +1,9 @@
-from models import llm_cohere,llm_google,llm_groq
+from Backend.models import llm_cohere,llm_google,llm_groq
 
-from state import SummaryState
-from tools_functions import data_overview,data_quality,data_statistics,get_important_numerical_columns, data_categorical, analyze_categorical_columns, data_outlier, data_correlation, data_target_analysis
-from prompt import target_identify_prompt,eda_insight_summary_prompt
-from storage_graphs import save_plotly_figure
+from Backend.state import SummaryState
+from Backend.tools_functions import data_overview,data_quality,data_statistics,get_important_numerical_columns, data_categorical, analyze_categorical_columns, data_outlier, data_correlation, data_target_analysis
+from Backend.prompt import target_identify_prompt,eda_insight_summary_prompt
+from Backend.storage_graphs import save_plotly_figure
 
 import json 
 import re
