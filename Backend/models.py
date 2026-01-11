@@ -45,7 +45,7 @@ llm_groq_2 = ChatGroq(
     temperature=0.3,
     api_key=os.environ["GROQ_API_KEY"],
 )
-LLM_POOL = [llm_google_1, llm_google_2, llm_google_3, llm_cohere, llm_groq_1, llm_groq_2]
+LLM_POOL = [llm_google_2, llm_google_3, llm_google_1, llm_cohere, llm_groq_1, llm_groq_2]
 
 def invoke_with_fallback(llms, messages):
     last_error = None

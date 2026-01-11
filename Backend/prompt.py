@@ -47,7 +47,7 @@ You are a senior data scientist generating an Exploratory Data Analysis (EDA) su
 
 You are given structured outputs from multiple EDA steps along with file paths of generated visual artifacts only the image URLs not other than that.
 
-Your task is to synthesize them into a clear, concise, and well-organized human-readable report, while also assigning the correct visual outputs to their relevant sections. Also add some small amount of relevent explanation into each point.
+Your task is to synthesize them into a clear, concise, and well-organized human-readable report, while also assigning the correct visual outputs to their relevant sections. Also add some small amount of relevent explanation into each point. make it in proper markdown format.
 
 ==============================
 STRICT RULES
@@ -64,7 +64,7 @@ Do NOT add sections beyond what is requested
 
 Visuals must be listed only under the subsection “Associated Visuals”
 
-If no visuals are available for a section, just leave it.
+If There no visuals are available for a section, just leave it. There should no "Associated Visual" point.
 
 ==============================
 SECTIONS TO GENERATE
@@ -231,6 +231,10 @@ Do NOT return JSON
 
 Do NOT include markdown fences
 
+Write it in proper markdown format so that images also include in it 
+
+for image use this markdown "![any-text](IMAGE_URL)"
+
 Do NOT include extra commentary
 
 Remember all the points carefully.
@@ -246,4 +250,29 @@ data given  :
 {mongo_doc}
 """,
 input_variables=["mongo_doc"]
+)
+
+
+html_prompt = PromptTemplate(
+    template="""
+You are a senior data analyst and UI writer.
+
+Given the following EDA summary text, generate a clean, readable
+HTML fragment suitable for embedding inside a React component. Give images link in the image tag to show in the react front end.
+
+Rules:
+- Do NOT include <html>, <head>, <body>, <script>, or <iframe>
+- Use semantic HTML only
+- Use Tailwind-like class names (no inline JS)
+- Use <section>, <h2>, <p>, <ul>, <table> where appropriate
+- Highlight important insights using <span class="highlight">
+- Keep it responsive and readable
+- Output ONLY HTML (no explanation)
+- include all the images in there respective place the link should be as it is . with "https://res.cloudinary.com/dcp9l09d0/image/upload/...."
+- make the summary intact nothing change in the text
+
+EDA SUMMARY:
+{{eda_summary_text}}
+""",
+input_variables=["eda_summary_text"]
 )

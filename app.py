@@ -10,8 +10,8 @@ from Backend.state import ChatRequest
 from Backend.graph import eda_workflow
 from Backend.mongo import store_eda_data, delete_all_data
 from Backend.storage_graphs import delete_all_visual_outputs
-from Backend.prompt import mongo_prompt
-from Backend.models import llm_groq_1
+from Backend.prompt import mongo_prompt,html_prompt
+from Backend.models import llm_groq_1,llm_google_2,llm_cohere
 from Backend.chat_nodes import chat_with_data
 # from Backend.session_store import set_session
 
@@ -67,7 +67,9 @@ async def run_eda(file: UploadFile = File(...),response: Response = None):
         }
 
         prompt = mongo_prompt.format_prompt(mongo_doc=mongo_doc)
-        llm_response = llm_groq_1.invoke(prompt)
+        llm_response = llm_cohere.invoke(prompt)
+        # prompt_html = html_prompt.format_prompt(eda_summary_html = final_state["eda_insight_summary"])
+        # llm_response_html = llm_google_2.invoke(prompt_html)
 
         document = {
             "run_id": run_id,
@@ -75,6 +77,7 @@ async def run_eda(file: UploadFile = File(...),response: Response = None):
             "original_filename": file.filename,
             "llm_overview": llm_response.content,
             "eda_summary": final_state["eda_insight_summary"],
+            # "eda_summary_html": llm_response_html.content,
             "visual_outputs": final_state["graph_file_path"],
         }
 
@@ -87,6 +90,7 @@ async def run_eda(file: UploadFile = File(...),response: Response = None):
                 "run_id": run_id,
                 "mongo_id": mongo_id,
                 "summary": final_state["eda_insight_summary"],
+                # "html": llm_response_html.content,
             }
         )
         
