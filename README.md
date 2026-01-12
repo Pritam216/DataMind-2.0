@@ -18,14 +18,6 @@
 > 🎥 **Demo Video:** [*Video*](https://youtu.be/OxyeqtRZHqU)
 
 ## 🎥 Demo Video
-<a href="https://youtu.be/OxyeqtRZHqU">
-  <img
-    src="https://github.com/user-attachments/assets/1373eede-50db-4382-a509-8ea019e73939"
-    alt="DataMind-2.0 Demo"
-    width="800"
-  />
-</a>
-
 [![DataMind-2.0 Demo](https://github.com/user-attachments/assets/1373eede-50db-4382-a509-8ea019e73939)](https://youtu.be/OxyeqtRZHqU)
 
 ---
@@ -55,18 +47,31 @@ By coupling a backend API with LLM workflows and vector memory, this project mak
 ## 📁 **Project Structure**
 
 ```
-📦DataMind-2.0
- ├── Backend/                 # Core API code
- │   ├── app.py               # API entry point
- │   ├── routes/              # Endpoints definitions
- │   ├── controllers/         # Business logic
- │   ├── services/            # Model + AI services
- │   ├── utils/               # Helpers / utils
- │   └── models/              # DB / schemas (if any)
- ├── requirements.txt         # Python dependencies
- ├── Procfile                 # Deployment config (Heroku / Railway)
- ├── README.md
- └── .gitignore
+DATAMIND-2.0
+├── __pycache__
+├── Backend
+│   ├── __pycache__
+│   ├── data
+│   ├── chat_nodes.py
+│   ├── graph.py
+│   ├── main_nodes.py
+│   ├── main.py
+│   ├── models.py
+│   ├── mongo.py
+│   ├── prompt.py
+│   ├── session_store.py
+│   ├── state.py
+│   ├── storage_graphs.py
+│   ├── testing_ground.ipynb
+│   └── tools_functions.py
+├── venv
+├── .env
+├── .gitignore
+├── app.py
+├── LICENSE
+├── Procfile
+├── README.md
+└── requirements.txt
 ```
 
 ---
@@ -77,12 +82,10 @@ By coupling a backend API with LLM workflows and vector memory, this project mak
 
 | Component       | Model / Service                             |
 | --------------- | ------------------------------------------- |
-| Chat & Analysis | Google Gemini / GPT-X family                |
+| Chat & Analysis | Google Gemini / Cohere / Groq API           |
 | Embeddings      | OpenAI / Claude / Custom embeddings service |
-| Memory Storage  | Redis / Vector DB                           |
+| Memory Storage  | Vector DB / Cloudinary                      |
 | Agent Logic     | Custom workflow orchestrator                |
-
-(*Replace with exact models used from your codebase — Large LLMs recommended for analysis tasks*)
 
 ---
 
@@ -91,12 +94,17 @@ By coupling a backend API with LLM workflows and vector memory, this project mak
 Create a `.env` file with the following:
 
 ```
-PORT=8000
-REDIS_URL=redis://:password@host:port
-OPENAI_API_KEY=your_openai_key
-GOOGLE_API_KEY=your_gemini_key
-DATABASE_URL=postgres://...
-VECTOR_DB_URL=...
+GEMINI_API_KEY = ""
+COHERE_API_KEY = ""
+GROQ_API_KEY = ""
+
+CLOUDINARY_CLOUD_NAME = ""
+CLOUDINARY_API_KEY = ""
+CLOUDINARY_API_SECRET = ""
+
+MONGO_URI = ""
+DB_NAME = ""
+COLLECTION_NAME = ""
 ```
 
 > DB and vector storage depends on your exact implementation.
@@ -142,24 +150,40 @@ uvicorn app:app --reload --host 0.0.0.0 --port 8000
 
 ## ⭐ **Features**
 
-### 🧠 Core Intelligence
+### 🔐 Privacy-First Data Handling
 
-* **Smart data querying** using LLMs
-* Natural language analytics
-* Multi-step reasoning workflows
+* **No data storage** — datasets are processed in memory only
+* **Automatic deletion** once EDA completes
+* Zero long-term retention, eliminating data leakage risks
 
-### 🚀 Backend Capabilities
+---
 
-* REST API for AI agents
-* Async processing for heavy tasks
-* Vector/Redis memory support
-* Modular controller-service architecture
+### ⚙️ Pure Python Analytics
 
-### 📊 AI-Driven Outputs
+* Entire analysis runs on:
 
-* Automated insight generation
-* SQL formula & data summarization
-* Visualization ready responses
+  * **NumPy** for computation
+  * **Pandas** for data processing
+  * **Plotly** for interactive visualizations
+* No external analytics engines or data persistence
+
+---
+
+### 🤖 Safe & Responsible AI Usage
+
+* AI models (Gemini / ChatGPT / others) are used **only to generate insights**
+* Raw data is **never stored, reused, or trained on**
+* Safer than uploading datasets directly to AI chat tools
+
+---
+
+### 📊 Ephemeral EDA Execution
+
+* EDA runs fully within a single session
+* Charts and summaries are generated on the fly
+* Memory is cleared immediately after execution
+
+**Your data is analyzed, visualized, and forgotten.**
 
 ---
 
