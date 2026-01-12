@@ -10,7 +10,10 @@
 ![License](https://img.shields.io/badge/License-MIT-lightgrey)
 
 ---
-
+![AI Powered](https://img.shields.io/badge/AI-Powered-blueviolet)
+![Backend](https://img.shields.io/badge/Backend-FastAPI-black)
+![Scalable](https://img.shields.io/badge/Scalable-Yes-success)
+---
 > 🔗 **Demo Link:** [https://datamind-20-production.up.railway.app/docs](https://datamind-20-production.up.railway.app/docs)
 > 🎥 **Demo Video:** *(Replace with your video link, e.g., YouTube / Loom / Drive)*
 
