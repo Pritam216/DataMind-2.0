@@ -19,7 +19,7 @@
 
 ## 🎥 Demo Video
 
-[![DataMind-2.0 Demo](https://img.youtube.com/vi/OxyeqtRZHqU/0.jpg)]([https://www.youtube.com/watch?v=OxyeqtRZHqU](https://youtu.be/OxyeqtRZHqU))
+[![DataMind-2.0 Demo](https://youtu.be/OxyeqtRZHqU)]
 
 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/8c2b805b-bce5-40d2-8a64-86c0522cc654" />
