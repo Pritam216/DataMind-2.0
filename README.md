@@ -87,36 +87,8 @@ DATAMIND-2.0
 | Graph           | LangGraph, LangChain                        |
 
 ---
----
-config:
-  flowchart:
-    curve: linear
----
-graph TD;
-	__start__([<p>__start__</p>]):::first
-	overview(overview)
-	quality(quality)
-	stat(stat)
-	category(category)
-	outlier(outlier)
-	correlation(correlation)
-	target_analysis(target_analysis)
-	summary(summary)
-	__end__([<p>__end__</p>]):::last
-	__start__ --> overview;
-	category --> outlier;
-	correlation --> target_analysis;
-	outlier --> correlation;
-	overview --> quality;
-	quality --> stat;
-	stat --> category;
-	target_analysis --> summary;
-	summary --> __end__;
-	classDef default fill:#f2f0ff,line-height:1.2
-	classDef first fill-opacity:0
-	classDef last fill:#bfb6fc
+<img width="181" height="933" alt="image" src="https://github.com/user-attachments/assets/23d12b94-3277-43c7-9619-e2c9a99b840a" />
 
----
 
 ## 🔐 **Environment Variables**
 
@@ -139,6 +111,7 @@ COLLECTION_NAME = ""
 > DB and vector storage depends on your exact implementation.
 
 ---
+<img width="181" height="933" alt="image" src="https://github.com/user-attachments/assets/fab2c541-689e-46b0-b6ac-56a573e70022" />
 
 ## 🛠️ **Setup & Installation**
 
