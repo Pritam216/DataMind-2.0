@@ -18,9 +18,13 @@
 > 🎥 **Demo Video:** [*Video*](https://youtu.be/OxyeqtRZHqU)
 
 ## 🎥 Demo Video
-
-[[![DataMind-2.0 Demo]<img width="1919" height="909" alt="image" src="https://github.com/user-attachments/assets/1373eede-50db-4382-a509-8ea019e73939" />](https://youtu.be/OxyeqtRZHqU)]
-
+<a href="https://youtu.be/OxyeqtRZHqU">
+  <img
+    src="https://github.com/user-attachments/assets/1373eede-50db-4382-a509-8ea019e73939"
+    alt="DataMind-2.0 Demo"
+    width="800"
+  />
+</a>
 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/8c2b805b-bce5-40d2-8a64-86c0522cc654" />
 
