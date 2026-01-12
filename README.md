@@ -1,5 +1,15 @@
 # 🚀 **DataMind-2.0** — Advanced Backend for Smart Data Analysis AI
 
+![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)
+![FastAPI](https://img.shields.io/badge/FastAPI-Production%20Ready-009688?logo=fastapi)
+![LLM](https://img.shields.io/badge/LLM-Gemini%20%7C%20GPT-orange)
+![Redis](https://img.shields.io/badge/Redis-State%20Management-red?logo=redis)
+![Railway](https://img.shields.io/badge/Deployed%20On-Railway-purple?logo=railway)
+![API](https://img.shields.io/badge/API-RESTful-success)
+![Status](https://img.shields.io/badge/Status-Active%20Development-brightgreen)
+![License](https://img.shields.io/badge/License-MIT-lightgrey)
+
+
 > 🔗 **Demo Link:** [https://datamind-20-production.up.railway.app/docs](https://datamind-20-production.up.railway.app/docs)
 > 🎥 **Demo Video:** *(Replace with your video link, e.g., YouTube / Loom / Drive)*
 
