@@ -87,6 +87,36 @@ DATAMIND-2.0
 | Graph           | LangGraph, LangChain                        |
 
 ---
+---
+config:
+  flowchart:
+    curve: linear
+---
+graph TD;
+	__start__([<p>__start__</p>]):::first
+	overview(overview)
+	quality(quality)
+	stat(stat)
+	category(category)
+	outlier(outlier)
+	correlation(correlation)
+	target_analysis(target_analysis)
+	summary(summary)
+	__end__([<p>__end__</p>]):::last
+	__start__ --> overview;
+	category --> outlier;
+	correlation --> target_analysis;
+	outlier --> correlation;
+	overview --> quality;
+	quality --> stat;
+	stat --> category;
+	target_analysis --> summary;
+	summary --> __end__;
+	classDef default fill:#f2f0ff,line-height:1.2
+	classDef first fill-opacity:0
+	classDef last fill:#bfb6fc
+
+---
 
 ## 🔐 **Environment Variables**
 
