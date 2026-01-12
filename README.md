@@ -87,9 +87,6 @@ DATAMIND-2.0
 | Graph           | LangGraph, LangChain                        |
 
 ---
-<img width="181" height="933" alt="image" src="https://github.com/user-attachments/assets/23d12b94-3277-43c7-9619-e2c9a99b840a" />
-
-
 ## 🔐 **Environment Variables**
 
 Create a `.env` file with the following:
