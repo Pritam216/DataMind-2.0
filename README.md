@@ -17,6 +17,8 @@
 > 🔗 **Demo Link:** [https://datamind-20-production.up.railway.app/docs](https://datamind-20-production.up.railway.app/docs)
 > 🎥 **Demo Video:** [*Video*](https://youtu.be/OxyeqtRZHqU)
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/OxyeqtRZHqU?si=xfm9Pvx8fT7zYK2o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ---
 
 ## 📌 **Introduction**
