@@ -15,7 +15,7 @@
 ![Scalable](https://img.shields.io/badge/Scalable-Yes-success)
 ---
 > 🔗 **Demo Link:** [https://datamind-20-production.up.railway.app/docs](https://datamind-20-production.up.railway.app/docs)
-> 🎥 **Demo Video:** *(Replace with your video link, e.g., YouTube / Loom / Drive)*
+> 🎥 **Demo Video:** [*Video*](https://youtu.be/OxyeqtRZHqU)
 
 ---
 
