@@ -83,9 +83,9 @@ DATAMIND-2.0
 | Component       | Model / Service                             |
 | --------------- | ------------------------------------------- |
 | Chat & Analysis | Google Gemini / Cohere / Groq API           |
-| Embeddings      | OpenAI / Claude / Custom embeddings service |
 | Memory Storage  | Vector DB / Cloudinary                      |
 | Agent Logic     | Custom workflow orchestrator                |
+| Graph           | LangGraph, LangChain                        |
 
 ---
 
