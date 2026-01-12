@@ -10,10 +10,6 @@
 ![License](https://img.shields.io/badge/License-MIT-lightgrey)
 
 ---
-![GitHub stars](https://img.shields.io/github/stars/Pritam216/DataMind-2.0?style=social)
-![GitHub forks](https://img.shields.io/github/forks/Pritam216/DataMind-2.0?style=social)
-![GitHub issues](https://img.shields.io/github/issues/Pritam216/DataMind-2.0)
----
 
 > 🔗 **Demo Link:** [https://datamind-20-production.up.railway.app/docs](https://datamind-20-production.up.railway.app/docs)
 > 🎥 **Demo Video:** *(Replace with your video link, e.g., YouTube / Loom / Drive)*
