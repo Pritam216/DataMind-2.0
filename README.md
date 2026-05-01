@@ -4,7 +4,7 @@
 ![FastAPI](https://img.shields.io/badge/FastAPI-Production%20Ready-009688?logo=fastapi)
 ![LLM](https://img.shields.io/badge/LLM-Gemini%20%7C%20GPT-orange)
 ![Redis](https://img.shields.io/badge/Redis-State%20Management-red?logo=redis)
-![Railway](https://img.shields.io/badge/Deployed%20On-Railway-purple?logo=railway)
+![Render](https://img.shields.io/badge/Deployed%20On-Render-purple?logo=Render)
 ![API](https://img.shields.io/badge/API-RESTful-success)
 ![Status](https://img.shields.io/badge/Status-Active%20Development-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-lightgrey)
@@ -253,7 +253,7 @@ Great question. Here’s why DataMind-2.0 is valuable:
 
 ## 📌 **Conclusion**
 
-DataMind-2.0 is a powerful backend scaffold for AI-powered data analysis and insight generation. It turns raw data into actionable intelligence through smart LLM-driven workflows while being robust enough for real deployment environments like Railway, Render, or AWS.
+DataMind-2.0 is a powerful backend scaffold for AI-powered data analysis and insight generation. It turns raw data into actionable intelligence through smart LLM-driven workflows while being robust enough for real deployment environments like Render, Render, or AWS.
 
 This repository isn’t just a demo — it’s a **foundation for real applications**, scalable enrichments, and production AI projects. Whether building analytics dashboards, AI-assistant UIs, or internal tools, DataMind-2.0 provides a solid backend foundation.
 
