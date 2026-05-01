@@ -14,7 +14,7 @@
 ![Backend](https://img.shields.io/badge/Backend-FastAPI-black)
 ![Scalable](https://img.shields.io/badge/Scalable-Yes-success)
 ---
-> 🔗 **Demo Link:** [https://datamind-20-production.up.railway.app/docs](https://datamind-20-production.up.railway.app/docs)
+> 🔗 **Demo Link:** https://datamind-2-0.onrender.com
 
 ## 🎥 Demo Video
 [![DataMind-2.0 Demo](https://github.com/user-attachments/assets/1373eede-50db-4382-a509-8ea019e73939)](https://youtu.be/OxyeqtRZHqU)
