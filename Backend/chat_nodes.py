@@ -1,10 +1,4 @@
-# from langchain_core.chat_history import InMemoryChatMessageHistory
-# from langchain_core.runnables.history import RunnableWithMessageHistory
-# from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.messages import HumanMessage
-# from models import llm_groq
-# from mongo import fetch_eda_data
-
 # # In-memory store per run_id
 CHAT_STORE = {}
 
@@ -68,7 +62,7 @@ from Backend.mongo import fetch_eda_data
 CHAT_STORE = {}
 
 def chat_with_data(run_id: str, user_query: str) -> str:
-    # 1️⃣ Create or fetch history
+    # Create or fetch history
     if run_id not in CHAT_STORE:
         # print(run_id)
         CHAT_STORE[run_id] = InMemoryChatMessageHistory()
@@ -98,7 +92,7 @@ def chat_with_data(run_id: str, user_query: str) -> str:
     print(run_id)
     history = CHAT_STORE[run_id]
 
-    # 2️⃣ Prompt
+    # Prompt
     prompt = ChatPromptTemplate.from_messages([
         ("system", "{system}"),
         ("placeholder", "{history}"),
@@ -107,7 +101,7 @@ def chat_with_data(run_id: str, user_query: str) -> str:
 
     chain = prompt | llm_cohere
 
-    # 3️⃣ Runnable with history
+    # Runnable with history
     runnable = RunnableWithMessageHistory(
         chain,
         lambda _: history,
