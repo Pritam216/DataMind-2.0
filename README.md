@@ -108,7 +108,9 @@ COLLECTION_NAME = ""
 > DB and vector storage depends on your exact implementation.
 
 ---
-<img width="181" height="933" alt="image" src="https://github.com/user-attachments/assets/fab2c541-689e-46b0-b6ac-56a573e70022" />
+<!-- <img width="181" height="933" alt="image" src="https://github.com/user-attachments/assets/fab2c541-689e-46b0-b6ac-56a573e70022" /> -->
+<img width="2319" height="1549" alt="image" src="https://github.com/user-attachments/assets/07aa9c1b-bddb-4cfb-a1c3-7edcaa245dc0" />
+
 
 ## 🛠️ **Setup & Installation**
 
